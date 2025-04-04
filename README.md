@@ -1,4 +1,4 @@
-# Obscure Languages Translation Platform
+# Language Translation Platform
 
 A web-based platform designed to facilitate translation between rare and obscure languages, making linguistic diversity more accessible.
 
@@ -19,8 +19,8 @@ A web-based platform designed to facilitate translation between rare and obscure
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/hiterharris/obscure-languages-translation-platform.git
-cd obscure-languages-translation-platform
+git clone https://github.com/hiterharris/language-translation-platform.git
+cd language-translation-platform
 ```
 
 2. Install dependencies:
@@ -63,4 +63,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Hiter Harris - [@hiterharris](https://github.com/hiterharris)
 
-Project Link: [https://github.com/hiterharris/obscure-languages-translation-platform](https://github.com/hiterharris/obscure-languages-translation-platform)
+Project Link: [https://github.com/hiterharris/language-translation-platform](https://github.com/hiterharris/language-translation-platform)

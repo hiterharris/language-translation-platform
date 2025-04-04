@@ -171,7 +171,7 @@ export default function Home() {
               <Sidebar className="h-6 w-6" />
             </Button>
             <Globe className="h-6 w-6" />
-            <h1 className="text-xl font-semibold">Obscure Languages Translation Platform</h1>
+            <h1 className="text-xl font-semibold">Language Translation Platform</h1>
           </div>
         </div>
       </header>

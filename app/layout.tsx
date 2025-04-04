@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Obscure Languages Translation Platform',
+  title: 'Language Translation Platform',
   description: 'Professional translation platform for text, audio, and video content',
 };
 
