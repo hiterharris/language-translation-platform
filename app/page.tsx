@@ -16,7 +16,7 @@ export default function Home() {
   const [sourceLanguage, setSourceLanguage] = useState('');
   const [targetLanguage, setTargetLanguage] = useState('');
   const [isTranslating, setIsTranslating] = useState(false);
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [selectedDocType, setSelectedDocType] = useState<string | null>(null);
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [documents, setDocuments] = useState<Document[]>([]);
@@ -41,6 +41,21 @@ export default function Home() {
   useEffect(() => {
     loadDocuments();
   }, [selectedDocType, selectedLanguage]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSidebarOpen(window.innerWidth >= 1024); // 1024px is the 'lg' breakpoint in Tailwind
+    };
+
+    // Set initial state
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const loadDocuments = async () => {
     try {
@@ -160,27 +175,27 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="header-gradient text-white">
-        <div className="flex items-center justify-between px-6 py-4">
-          <div className="flex items-center space-x-4">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4">
+          <div className="flex items-center space-x-2 sm:space-x-4">
             <Button 
               variant="ghost" 
               size="icon"
-              className="text-white hover:text-white/80 hover:bg-white/10"
+              className="text-white hover:text-white/80 hover:bg-white/10 lg:hidden"
               onClick={() => setIsSidebarOpen(!isSidebarOpen)}
             >
-              <Sidebar className="h-6 w-6" />
+              <Menu className="h-6 w-6" />
             </Button>
             <Globe className="h-6 w-6" />
-            <h1 className="text-xl font-semibold">Language Translation Platform</h1>
+            <h1 className="text-lg sm:text-xl font-semibold">Language Translation Platform</h1>
           </div>
         </div>
       </header>
 
-      <div className="flex">
+      <div className="flex relative">
         {/* Sidebar */}
         <aside className={cn(
-          "w-64 border-r p-6 space-y-8 transition-all duration-300 transform bg-gray-50",
-          isSidebarOpen ? "translate-x-0" : "-translate-x-full"
+          "fixed lg:static lg:block z-40 h-[calc(100vh-4rem)] w-64 border-r p-4 sm:p-6 space-y-6 sm:space-y-8 transition-all duration-300 transform bg-gray-50",
+          isSidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}>
           {/* New Translation Button */}
           <div>
@@ -237,10 +252,9 @@ export default function Home() {
 
         {/* Main Content */}
         <main className={cn(
-          "flex-1 transition-all duration-300 bg-gray-50",
-          isSidebarOpen ? "ml-0" : "ml-0"
+          "flex-1 transition-all duration-300 bg-gray-50 min-h-[calc(100vh-4rem)] w-full"
         )}>
-          <div className="container mx-auto py-8 px-4">
+          <div className="container mx-auto py-4 sm:py-8 px-4">
             {selectedDocument ? (
               <div>
                 <Button 
@@ -336,7 +350,7 @@ export default function Home() {
                     <CardTitle>Universal Translator</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className="grid grid-cols-[1fr,auto,1fr] gap-4 items-start">
+                    <div className="grid grid-cols-1 md:grid-cols-[1fr,auto,1fr] gap-4 items-start">
                       {/* Source Language */}
                       <div className="space-y-4">
                         <Select value={sourceLanguage} onValueChange={setSourceLanguage}>
@@ -363,11 +377,23 @@ export default function Home() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="mt-12 hover:bg-blue-50"
+                        className="hidden md:inline-flex mt-12 hover:bg-blue-50"
                         onClick={handleSwapLanguages}
                         disabled={isTranslating}
                       >
                         <ArrowRightLeft className="h-4 w-4" />
+                      </Button>
+
+                      {/* Mobile Swap Button */}
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="md:hidden w-full flex items-center justify-center hover:bg-blue-50"
+                        onClick={handleSwapLanguages}
+                        disabled={isTranslating}
+                      >
+                        <ArrowRightLeft className="h-4 w-4 mr-2" />
+                        Swap Languages
                       </Button>
 
                       {/* Target Language */}
@@ -398,7 +424,7 @@ export default function Home() {
                         size="lg"
                         onClick={handleTranslate}
                         disabled={isTranslating || !sourceText || !sourceLanguage || !targetLanguage}
-                        className="header-gradient text-white px-8"
+                        className="header-gradient text-white px-4 sm:px-8 w-full sm:w-auto"
                       >
                         {isTranslating ? (
                           <>

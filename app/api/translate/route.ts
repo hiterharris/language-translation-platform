@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
+export const dynamic = 'force-dynamic';
+
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
 });
@@ -33,6 +35,7 @@ export async function POST(req: Request) {
     });
 
     const translatedText = completion.choices[0].message.content;
+    console.log('Translated Text:', translatedText);
 
     return NextResponse.json({
       success: true,
