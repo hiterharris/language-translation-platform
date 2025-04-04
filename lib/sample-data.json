@@ -1,0 +1,166 @@
+{
+  "documents": [
+    {
+      "id": "doc1",
+      "title": "Military Field Manual",
+      "file_path": "/documents/military-field-manual.pdf",
+      "file_type": "application/pdf",
+      "source_language": "dari",
+      "target_language": "english",
+      "status": "completed",
+      "content": "راهنمای میدان نظامی برای عملیات های تاکتیکی",
+      "metadata": {
+        "pages": 45,
+        "word_count": 15000,
+        "classification": "Unclassified"
+      },
+      "created_at": "2025-03-01T08:00:00Z",
+      "updated_at": "2025-03-01T10:30:00Z",
+      "translations": []
+    },
+    {
+      "id": "doc2",
+      "title": "Intelligence Report 2025-A",
+      "file_path": "/documents/intelligence-report-2025-a.pdf",
+      "file_type": "application/pdf",
+      "source_language": "pashto",
+      "target_language": "english",
+      "status": "in_progress",
+      "content": "د استخباراتو راپور ۲۰۲۵-الف",
+      "metadata": {
+        "pages": 12,
+        "word_count": 3000,
+        "priority": "High"
+      },
+      "created_at": "2025-03-15T09:00:00Z",
+      "updated_at": "2025-03-15T11:45:00Z",
+      "translations": []
+    },
+    {
+      "id": "doc3",
+      "title": "Surveillance Photos",
+      "file_path": "/documents/surveillance-photos.jpeg",
+      "file_type": "image/jpeg",
+      "source_language": "tajik",
+      "target_language": "english",
+      "status": "completed",
+      "content": "Аксҳои назоратӣ",
+      "metadata": {
+        "resolution": "4K",
+        "location": "Urban Area",
+        "timestamp": "2025-02-28T14:30:00Z"
+      },
+      "created_at": "2025-02-28T15:00:00Z",
+      "updated_at": "2025-02-28T16:20:00Z",
+      "translations": []
+    },
+    {
+      "id": "doc4",
+      "title": "Intercepted Radio Communication",
+      "file_path": "/documents/intercepted-radio-communication.mp3",
+      "file_type": "audio/mpeg",
+      "source_language": "uzbek",
+      "target_language": "english",
+      "status": "pending",
+      "content": "Ushlab qolingan radio aloqa",
+      "metadata": {
+        "duration": "45:30",
+        "quality": "High",
+        "channels": 2
+      },
+      "created_at": "2025-03-10T12:00:00Z",
+      "updated_at": "2025-03-10T12:00:00Z",
+      "translations": []
+    },
+    {
+      "id": "doc5",
+      "title": "Training Video Series",
+      "file_path": "/documents/training-video-series.mp4",
+      "file_type": "video/mp4",
+      "source_language": "dari",
+      "target_language": "english",
+      "status": "completed",
+      "content": "سلسله ویدیوهای آموزشی",
+      "metadata": {
+        "duration": "02:30:00",
+        "resolution": "1080p",
+        "chapters": 8
+      },
+      "created_at": "2025-02-15T10:00:00Z",
+      "updated_at": "2025-02-16T09:30:00Z",
+      "translations": []
+    },
+    {
+      "id": "doc6",
+      "title": "Diplomatic Correspondence",
+      "file_path": "/documents/diplomatic-correspondence.pdf",
+      "file_type": "application/pdf",
+      "source_language": "tajik",
+      "target_language": "english",
+      "status": "in_progress",
+      "content": "Мукотиботи дипломатӣ",
+      "metadata": {
+        "pages": 5,
+        "classification": "Confidential",
+        "priority": "High"
+      },
+      "created_at": "2025-03-20T14:00:00Z",
+      "updated_at": "2025-03-20T15:15:00Z",
+      "translations": []
+    }
+  ],
+  "translations": [
+    {
+      "id": "trans1",
+      "document_id": "doc1",
+      "content": "Military Field Manual for Tactical Operations",
+      "status": "completed",
+      "metadata": {
+        "confidence_score": 0.95,
+        "review_status": "approved"
+      },
+      "created_at": "2025-03-01T08:30:00Z",
+      "updated_at": "2025-03-01T10:30:00Z",
+      "language": "english"
+    },
+    {
+      "id": "trans2",
+      "document_id": "doc2",
+      "content": "Intelligence Report 2025-A",
+      "status": "in_progress",
+      "metadata": {
+        "confidence_score": 0.85,
+        "completion_percentage": 60
+      },
+      "created_at": "2025-03-15T09:15:00Z",
+      "updated_at": "2025-03-15T11:45:00Z",
+      "language": "english"
+    },
+    {
+      "id": "trans3",
+      "document_id": "doc3",
+      "content": "Surveillance Photos",
+      "status": "completed",
+      "metadata": {
+        "confidence_score": 0.98,
+        "review_status": "approved"
+      },
+      "created_at": "2025-02-28T15:30:00Z",
+      "updated_at": "2025-02-28T16:20:00Z",
+      "language": "english"
+    },
+    {
+      "id": "trans4",
+      "document_id": "doc5",
+      "content": "Training Video Series",
+      "status": "completed",
+      "metadata": {
+        "confidence_score": 0.92,
+        "review_status": "approved"
+      },
+      "created_at": "2025-02-15T11:00:00Z",
+      "updated_at": "2025-02-16T09:30:00Z",
+      "language": "english"
+    }
+  ]
+}
